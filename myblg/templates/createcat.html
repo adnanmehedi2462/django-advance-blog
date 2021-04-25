@@ -1,0 +1,443 @@
+{%extends 'layout.html'%}
+{% load static %}
+{% block bar %}
+    <header class="site_header">
+        <!-- top menu area -->
+        <div class="invisible_header"></div>
+        <!-- header logo wrapper -->
+        <div class="header_logo_wrapper  ">
+            <div class="container">
+                <div class="logo_wrapper">
+                    <style>
+                        .site_logo_image {
+                            width: 124px;
+                            height: 32px;
+                        }
+                    </style>
+                    <a
+                        class="asalah_logo default_logo retina_logo"
+                        title="Writing"
+                        href="writing.html"
+                        rel="home">
+                        <img
+                            width="124"
+                            src="images/02-logo_124.png"
+                            srcset="https://awcdn1.ahmad.works/writing/wp-content/uploads/2018/02/logo_124.png 1x, https://awcdn1.ahmad.works/writing/wp-content/uploads/2018/02/logo_retina_248.png 2x"
+                            class="site_logo img-responsive site_logo_image pull-left clearfix"
+                            alt="Writing">
+                    </a>
+                    <!-- Site name for screen-reader-text -->
+                    <h1 class="screen-reader-text site_logo site-title pull-left clearfix">Writing</h1>
+                </div>
+                <!-- logo_wrapper -->
+                <div class="header_info_wrapper">
+                    <a
+                        id="user_info_icon"
+                        class="user_info_avatar user_info_button user_info_avatar_icon skin_color_hover"
+                        href="#">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end .header_logo_wrapper -->
+    </header>
+{% endblock %}
+{% block font %}
+
+    <div class="container" style="margin-bottom: 100px;">
+        <h1>create: category </h1>
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible" role="alert" style="background-color: rgb(0, 255, 128);color:#fff;margin-top: 30px">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" style="color:#000000">&times;</span>
+            </button>
+            {{ message }}
+        </div>
+    {% endfor %}
+        <form method="POST" action="" >
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="save">
+        </form>
+
+    </div>
+
+    {%endblock%}
+
+    {% block slid %}
+        <div class="sliding_close_helper_overlay"></div>
+        <div class="site_side_container sticky_sidebar">
+            <!-- screen-reader-text for sliding sidebar section -->
+            <h3 class="screen-reader-text">
+                wow Sliding Sidebar</h3>
+            <!-- Start slide sidebar wrapper .info_sidebar -->
+            <div class="info_sidebar">
+                <div
+                    id="search-2"
+                    class="widget_container widget_content widget widget_search clearfix">
+                    <form
+                        role="search"
+                        class="search-form"
+                        method="get"
+                        action="https://ahmad.works/writing/">
+                        <label>
+                            <span class="screen-reader-text">Search for:</span>
+                            <input
+                                type="search"
+                                class="search-field"
+                                placeholder="Search ..."
+                                value=""
+                                name="s"
+                                title="Search for:">
+                        </label>
+                        <i class="search_submit_icon fa fa-search"><input type="submit" class="search-submit" value=""></i>
+                    </form>
+                </div>
+                <div
+                    id="about-widget-4"
+                    class="widget_container widget_content widget about-widget clearfix">
+                    <h4 class="widget_title title">
+                        <span class="page_header_title">About Me</span></h4>
+                    <h5>User Name:
+                        {{auth.name}}</h5>
+                    <div class="asalah_about_me">
+                        <div class="author_image_wrapper default rounded"><img
+                            class="img-responsive lazyload "
+                            src="images/data:image-gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            data-src=""
+                            alt="About Me"></div>
+                        <div class="author_text_wrapper">
+                            <p>{{auth.details}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    id="social-widget-3"
+                    class="widget_container widget_content widget asalah-social-widget clearfix">
+                    <h4 class="widget_title title">
+                        <span class="page_header_title">Social Profiles</span></h4>
+                    <div class="social_icons_list widget_social_icons_list">
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Facebook"
+                            class="social_icon widget_social_icon social_facebook social_icon_facebook">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Twitter"
+                            class="social_icon widget_social_icon social_twitter social_icon_twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Google Plus"
+                            class="social_icon widget_social_icon social_google-plus social_icon_google-plus">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Behance"
+                            class="social_icon widget_social_icon social_behance social_icon_behance">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Dribbble"
+                            class="social_icon widget_social_icon social_dribbble social_icon_dribbble">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Linked In"
+                            class="social_icon widget_social_icon social_linkedin social_icon_linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Youtube"
+                            class="social_icon widget_social_icon social_youtube social_icon_youtube">
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Vimeo"
+                            class="social_icon widget_social_icon social_vimeo-square social_icon_vimeo-square">
+                            <i class="fa fa-vimeo-square"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="VK"
+                            class="social_icon widget_social_icon social_vk social_icon_vk">
+                            <i class="fa fa-vk"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Vine"
+                            class="social_icon widget_social_icon social_vine social_icon_vine">
+                            <i class="fa fa-vine"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Digg"
+                            class="social_icon widget_social_icon social_digg social_icon_digg">
+                            <i class="fa fa-digg"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="skype:#?userinfo"
+                            title="Skype"
+                            class="social_icon widget_social_icon social_skype social_icon_skype">
+                            <i class="fa fa-skype"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Instagram"
+                            class="social_icon widget_social_icon social_instagram social_icon_instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Pinterest"
+                            class="social_icon widget_social_icon social_pinterest social_icon_pinterest">
+                            <i class="fa fa-pinterest"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Github"
+                            class="social_icon widget_social_icon social_github social_icon_github">
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Bitbucket"
+                            class="social_icon widget_social_icon social_bitbucket social_icon_bitbucket">
+                            <i class="fa fa-bitbucket"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Stack Overflow"
+                            class="social_icon widget_social_icon social_stack-overflow social_icon_stack-overflow">
+                            <i class="fa fa-stack-overflow"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Ren Ren"
+                            class="social_icon widget_social_icon social_renren social_icon_renren">
+                            <i class="fa fa-renren"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Flickr"
+                            class="social_icon widget_social_icon social_flickr social_icon_flickr">
+                            <i class="fa fa-flickr"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Soundcloud"
+                            class="social_icon widget_social_icon social_soundcloud social_icon_soundcloud">
+                            <i class="fa fa-soundcloud"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Steam"
+                            class="social_icon widget_social_icon social_steam social_icon_steam">
+                            <i class="fa fa-steam"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="QQ"
+                            class="social_icon widget_social_icon social_qq social_icon_qq">
+                            <i class="fa fa-qq"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="Slideshare"
+                            class="social_icon widget_social_icon social_slideshare social_icon_slideshare">
+                            <i class="fa fa-slideshare"></i>
+                        </a>
+                        <a
+                            rel="nofollow"
+                            target="_blank"
+                            href="#"
+                            title="RSS"
+                            class="social_icon widget_social_icon social_rss social_icon_rss">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    id="postlist-widget-3"
+                    class="widget_container widget_content widget asalah-postlist-widget clearfix">
+                    <h4 class="widget_title title">
+                        <span class="page_header_title">Recent Posts</span></h4>
+                    <div class="asalah_post_list_widget">
+                        <ul class="post_list">
+                            <li class="post_item clearfix">
+                                <div class="post_thumbnail_wrapper">
+                                    <a
+                                        href="restaurant-employer-read-clients-orders-on-his-ipad.html"
+                                        title="Cheerful Loving Couple Bakers Drinking Coffee"><img
+                                        width="50"
+                                        height="50"
+                                        src="images/data:image-gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                        class="img-responsive lazyload  wp-post-image"
+                                        alt=""
+                                        srcset=""
+                                        data-src="https://awcdn1.ahmad.works/writing/wp-content/uploads/2015/05/cheerful-loving-couple-bakers-drinking-coffee-PCAVA6B-2-50x50.jpg"
+                                        data-sizes=""
+                                        data-srcset=" " sizes="
+                                        "></a>
+                                </div>
+                                <div class="post_info_wrapper">
+                                    <h5 class="title post_title">
+                                        <a
+                                            href="restaurant-employer-read-clients-orders-on-his-ipad.html"
+                                            title="Cheerful Loving Couple Bakers Drinking Coffee">Cheerful Loving Couple Bakers Drinking Coffee</a>
+                                    </h5>
+                                    <span class="post_meta_item post_meta_time post_time">May 17, 2015</span></div>
+                            </li>
+                            <li class="post_item clearfix">
+                                <div class="post_thumbnail_wrapper">
+                                    <a
+                                        href="amazing-classic-interior-design-with-perfect-lighting.html"
+                                        title="Loft Office With Vintage Decor For Creative Working"><img
+                                        width="50"
+                                        height="50"
+                                        src="images/data:image-gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                        class="img-responsive lazyload  wp-post-image"
+                                        alt=""
+                                        srcset=""
+                                        data-src="https://awcdn1.ahmad.works/writing/wp-content/uploads/2015/05/loft-office-with-vintage-decor-PFD2JSL-1-50x50.jpg"
+                                        data-sizes=""
+                                        data-srcset=" " sizes="
+                                        "></a>
+                                </div>
+                                <div class="post_info_wrapper">
+                                    <h5 class="title post_title">
+                                        <a
+                                            href="amazing-classic-interior-design-with-perfect-lighting.html"
+                                            title="Loft Office With Vintage Decor For Creative Working">Loft Office With Vintage Decor For Creative Working</a>
+                                    </h5>
+                                    <span class="post_meta_item post_meta_time post_time">May 17, 2015</span></div>
+                            </li>
+                            <li class="post_item clearfix">
+                                <div class="post_thumbnail_wrapper">
+                                    <a
+                                        href="english-breakfast-tea-with-tasty-donut-desserts.html"
+                                        title="Cosy Bright Office In Yellow And Grey Colors"><img
+                                        width="50"
+                                        height="50"
+                                        src="images/data:image-gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                        class="img-responsive lazyload  wp-post-image"
+                                        alt=""
+                                        srcset=""
+                                        data-src="https://awcdn1.ahmad.works/writing/wp-content/uploads/2015/05/yellow-and-gray-industrial-office-PFDQ5CR-1-50x50.jpg"
+                                        data-sizes=""
+                                        data-srcset=" " sizes="
+                                        "></a>
+                                </div>
+                                <div class="post_info_wrapper">
+                                    <h5 class="title post_title">
+                                        <a
+                                            href="english-breakfast-tea-with-tasty-donut-desserts.html"
+                                            title="Cosy Bright Office In Yellow And Grey Colors">Cosy Bright Office In Yellow And Grey Colors</a>
+                                    </h5>
+                                    <span class="post_meta_item post_meta_time post_time">May 17, 2015</span></div>
+                            </li>
+                            <li class="post_item clearfix">
+                                <div class="post_thumbnail_wrapper">
+                                    <a
+                                        href="two-smart-kids-reading-magazine-before-sleeping.html"
+                                        title="Traveller Visiting Ice Cave With Amazing Eye-catching Scenes"><img
+                                        width="50"
+                                        height="50"
+                                        src="images/data:image-gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                        class="img-responsive lazyload  wp-post-image"
+                                        alt=""
+                                        srcset=""
+                                        data-src="https://awcdn1.ahmad.works/writing/wp-content/uploads/2015/05/traveler-in-ice-cave-PT98G9X-50x50.jpg"
+                                        data-sizes=""
+                                        data-srcset=" " sizes="
+                                        "></a>
+                                </div>
+                                <div class="post_info_wrapper">
+                                    <h5 class="title post_title">
+                                        <a
+                                            href="two-smart-kids-reading-magazine-before-sleeping.html"
+                                            title="Traveller Visiting Ice Cave With Amazing Eye-catching Scenes">Traveller Visiting Ice Cave With Amazing Eye-catching Scenes</a>
+                                    </h5>
+                                    <span class="post_meta_item post_meta_time post_time">May 17, 2015</span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    id="fbpage-widget-3"
+                    class="widget_container widget_content widget asalah-fbpage-widget clearfix">
+                    <h4 class="widget_title title">
+                        <span class="page_header_title">Facebook</span></h4>
+                    <iframe
+                        data-src="https://www.facebook.com/plugins/page.php?href=https//www.facebook.com/https://www.facebook.com/ahmadworks.inc&amp;tabs&amp;width=280&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId=1028508873847234"
+                        class="lazyload"
+                        width="340"
+                        height="500"
+                        style="border:none;overflow:hidden"
+                        scrolling="no"
+                        frameborder="0"
+                        allowtransparency="true"
+                        allow="encrypted-media"></iframe>
+                </div>
+            </div>
+            <!-- end .info_sidebar -->
+        </div>
+        <!-- end site side container .site_side_container -->
+    </div>
+{% endblock %}

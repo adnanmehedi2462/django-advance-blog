@@ -1,0 +1,107 @@
+{%extends 'layout.html'%}
+{% load static %}
+{% block link %}
+    <link
+        href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        rel="stylesheet"
+        id="bootstrap-css">
+    <script type="text/javascript" src="{% static 'js/jquery-jquery.js' %}"></script>
+    <script
+        defer="defer"
+        type="text/javascript"
+        src="{% static 'js/out-header-bbfa0c28.min.js' %}"></script>
+    <script
+        defer="defer"
+        type="text/javascript"
+        src="{% static 'js/out-footer-55b34db7.min.js' %}"></script>
+{% endblock %}
+
+{% block bar %}
+{% endblock %}
+{% block font %}
+ 
+        <style>
+            #login .container #login-row #login-column #login-box {
+                margin-top: 120px;
+                max-width: 600px;
+                height: 320px;
+                border: 1px solid #9C9C9C;
+                background-color: #EAEAEA;
+            }
+            #login .container #login-row #login-column #login-box #login-form {
+                padding: 20px;
+            }
+            #login .container #login-row #login-column #login-box #login-form #register-link {
+                margin-top: -85px;
+            }
+        </style>
+
+        <div id="login" style="padding-top: 150px;;">
+           
+
+            <div class="container">
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible" role="alert" style="background-color: red;color:#fff;margin-top: 30px">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+              
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="" class="col-md-12">
+                            <form id="login-form" class="form" action="" method="post">
+                                {% csrf_token %}
+                                <h3 class="text-center text-info" style="text-align: center; color:#f47e00">SignUp</h3>
+
+
+                                {{form.as_p}}
+                                <div class="form-group">
+                                    <label for="remember-me" class="text-info">
+                                       
+                                    <input type="submit" name="submit" class="btn btn-info btn-md" value="Signup" style="background-color:#f47e00;color:#ffff" >
+                                </div>
+                                <div id="register-link" class="text-right">
+                                    <a href="{% url 'mainblogapp:login' %}" style="float: right; margin-top:-50px;">already have an account? Login </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            #login .container #login-row #login-column #login-form {
+                padding: 20px;
+                background-color: #eaeaea;
+            }
+            form ul li:nth-child(2){
+                display: none;
+            }
+            form ul li:nth-child(3){
+                display: none;
+            }
+            form ul li:nth-child(4){
+                display: none;
+            }
+            form ul li>li:nth-child(1){
+                display: none;
+            }
+            .helptext{
+                display: none;
+            }
+            .errorlist li{
+                color:red;
+            }
+            #login .container #login-row #login-column #login-form {
+                padding: 20px;
+             
+                width: 110%;
+                background-color: #eaeaea;
+            }
+        </style>
+{% endblock %}
+{% block footer %}{% endblock %}
+{% block slid %}{% endblock %}
